@@ -17,8 +17,14 @@ input.addEventListener("input", (event) => {
 function createBoxes(amount) {
   //let randomColor = getRandomHexColor();
   for (let i = 0; i < amount; i++) {
+    if (amount > 100) {
+      alert(
+        "You achived maximum amount of boxes, choose number less than 100!"
+      );
+      return;
+    }
     const newBoxRest = document.createElement("div");
-    boxes.after(newBoxRest);
+    boxes.append(newBoxRest);
     newBoxRest.classList.add("new-boxes");
     let newDivWidth = 30 + i * 10 + "px";
     let newDivHeight = 30 + i * 10 + "px";
